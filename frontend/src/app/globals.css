@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  /* Surface & Base Palette */
+  --canvas: #0a0a0a;
+  --panel: #111111;
+  --raised: #141414;
+  --hover: #1a1a1a;
+  --line: #262626;
+  --line-strong: #333333;
+  --fg: #fafafa;
+  --muted: #a3a3a3;
+  --faint: #737373;
+
+  /* Single-point Accent Token */
+  --accent: #fafafa;
+  --accent-hover: #e5e5e5;
+  --accent-ink: #0a0a0a;
+
+  /* Surfaces & Elevatons */
+  --surface-card: #111111;
+  --surface-card-hover: #171717;
+  --surface-modal: #111111;
+  --surface-drawer: #0e0e0e;
+  --surface-column: #0e0e0e;
+  --surface-aside: #0e0e0e;
+  --surface-popover: #141414;
+
+  /* Borders & Controls */
+  --border-hover: #404040;
+  --border-secondary: #333333;
+  --border-radio: #404040;
+  --toggle-off: #262626;
+  --placeholder-dim: #525252;
+
+  /* Text & Elements */
+  --text-secondary: #e5e5e5;
+  --text-menu: #e5e5e5;
+  --text-subtle: #d4d4d4;
+  --watermark: #262626;
+
+  /* Status Colors */
+  --status-pending: #94a3b8;
+  --status-progress: #f59e0b;
+  --status-done: #22c55e;
+  --status-done-check: #052e16;
+
+  /* Brand / Logo Colors */
+  --logo-start: #fafafa;
+  --logo-stop: #d4d4d4;
+  --logo-bars: #0a0a0a;
+
+  /* Avatar Colors */
+  --avatar-1: #262626;
+  --avatar-2: #333333;
+  --avatar-3: #404040;
+  --avatar-4: #4a4a4a;
+  --avatar-5: #525252;
+  --avatar-6: #5c5c5c;
+  --avatar-7: #666666;
+  --avatar-8: #3f3f46;
+  --avatar-9: #27272a;
+}
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-canvas: var(--canvas);
+  --color-panel: var(--panel);
+  --color-raised: var(--raised);
+  --color-hover: var(--hover);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+
+  --color-surface-card: var(--surface-card);
+  --color-surface-card-hover: var(--surface-card-hover);
+  --color-surface-modal: var(--surface-modal);
+  --color-surface-drawer: var(--surface-drawer);
+  --color-surface-column: var(--surface-column);
+  --color-surface-aside: var(--surface-aside);
+  --color-surface-popover: var(--surface-popover);
+
+  --color-border-hover: var(--border-hover);
+  --color-border-secondary: var(--border-secondary);
+  --color-border-radio: var(--border-radio);
+  --color-toggle-off: var(--toggle-off);
+  --color-placeholder-dim: var(--placeholder-dim);
+
+  --color-text-secondary: var(--text-secondary);
+  --color-text-menu: var(--text-menu);
+  --color-text-subtle: var(--text-subtle);
+  --color-watermark: var(--watermark);
+
+  --color-status-pending: var(--status-pending);
+  --color-status-progress: var(--status-progress);
+  --color-status-done: var(--status-done);
+  --color-status-done-check: var(--status-done-check);
+
+  --color-logo-start: var(--logo-start);
+  --color-logo-stop: var(--logo-stop);
+  --color-logo-bars: var(--logo-bars);
+
+  --color-avatar-1: var(--avatar-1);
+  --color-avatar-2: var(--avatar-2);
+  --color-avatar-3: var(--avatar-3);
+  --color-avatar-4: var(--avatar-4);
+  --color-avatar-5: var(--avatar-5);
+  --color-avatar-6: var(--avatar-6);
+  --color-avatar-7: var(--avatar-7);
+  --color-avatar-8: var(--avatar-8);
+  --color-avatar-9: var(--avatar-9);
+
+  --animate-toast-in: toast-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --animate-highlight: highlight 2.2s ease-out;
+  --animate-fade-up: fade-up 200ms ease-out both;
+  --animate-shimmer: shimmer 1.4s infinite;
+  --animate-live: live 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateX(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes highlight {
+    0%,
+    25% {
+      background-color: rgb(250 250 250 / 0.1);
+      box-shadow: inset 2px 0 0 rgb(250 250 250 / 0.8);
+    }
+    100% {
+      background-color: transparent;
+      box-shadow: inset 2px 0 0 transparent;
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes live {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    80%,
+    100% {
+      transform: scale(2.6);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  :focus-visible {
+    outline: 2px solid rgb(250 250 250 / 0.7);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: rgb(250 250 250 / 0.2);
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+
